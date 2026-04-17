@@ -277,6 +277,25 @@ body > main > h1 {
     margin-bottom: 20px;
 }
 
+.newUser{
+    padding-top: 100px;
+    align-self: right;
+    text-align: right;
+}
+
+.newUser h4{
+    padding-bottom: 5px;
+}
+
+.botaoCadastrar {
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    background-color: #003366;
+}
+
 /* ---------- Footer ESTÁTICO no final da tela ---------- */
 footer {
     background-color: #003366;

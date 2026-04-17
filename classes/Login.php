@@ -20,12 +20,19 @@
             //variavel para armazenar o usuario buscado na query
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+            //incia a sessao
+            session_start();
+
             //if que verfica se o email existe e a senha está correta
             if($user && password_verify($password, $user['senha'])){
-                echo "login feito";
-            }else{
-                echo "login não feito";
-            };
+                //se for verdadeiro sera gerado essas variaveis de sessao
+                $_SESSION['logado'] = true;
+                $_SESSION['nome'] = 'Usuario';
+                header('Location: index.php');
+            } else {
+                //se for verdadeiro da essa mensagem
+                echo "Credenciais erradas";
+            }
         }
     }
 
