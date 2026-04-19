@@ -24,7 +24,7 @@ foreach ($dividendos as $item) {
     }
 }
 ?>
-
+    
     <div class="container">
     <h1>Relatório de Investimentos x Dividendos</h1>
     <canvas id="graficoInvestimentosDividendos"></canvas>
@@ -33,8 +33,8 @@ foreach ($dividendos as $item) {
         const dados = <?php echo json_encode($dadosGrafico); ?>;
 
         const labels = Object.keys(dados);
-        const dadosInvestidos = Object.values(dados).map(item => item.investido);
-        const dadosDividendos = Object.values(dados).map(item => item.dividendos);
+        const dadosInvestidos = Object.values(dados).map(item => parseFloat(item.investido));
+        const dadosDividendos = Object.values(dados).map(item => parseFloat(item.dividendos));
 
         const ctx = document.getElementById('graficoInvestimentosDividendos').getContext('2d');
         new Chart(ctx, {
@@ -45,7 +45,7 @@ foreach ($dividendos as $item) {
                     {
                         label: 'Total Investido (R$)',
                         data: dadosInvestidos,
-                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
                     },

@@ -22,9 +22,9 @@
 
             //incia a sessao
             session_start();
-
             //if que verfica se o email existe e a senha está correta
             if($user && password_verify($password, $user['senha'])){
+                session_regenerate_id(true); // Previne session fixation
                 //se for verdadeiro sera gerado essas variaveis de sessao
                 $_SESSION['logado'] = true;
                 $_SESSION['nome'] = 'Usuario';

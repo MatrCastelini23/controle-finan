@@ -230,38 +230,6 @@ form p {
     margin-top: 6px;
 }
 
-/* ---------- Tabela (relatorio.php) ---------- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-th {
-    background-color: #003366;
-    color: #fff;
-    padding: 12px 14px;
-    text-align: left;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-}
-
-td {
-    padding: 11px 14px;
-    border-bottom: 1px solid #dde6f0;
-    color: #333;
-}
-
-tr:nth-child(even) td {
-    background-color: #f4f8fc;
-}
-
-tr:hover td {
-    background-color: #e8f0fa;
-}
-
 /* ---------- Canvas (gráfico) ---------- */
 canvas {
     width: 100% !important;

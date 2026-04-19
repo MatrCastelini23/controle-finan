@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -24,6 +25,7 @@
                 <li><a href="compras.php">Cadastrar Compras</a></li>
                 <li><a href="dividendos.php">Cadastrar Dividendos</a></li>
                 <li><a href="relatorio.php">Relatório</a></li>
+                <li><a href="classes/Logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
