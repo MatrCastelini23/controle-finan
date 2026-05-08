@@ -101,6 +101,14 @@ main {
     margin-bottom: 24px;
 }
 
+.container p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
 /* ---------- section.dashboard ---------- */
 section.dashboard {
     width: 90%;
@@ -229,6 +237,50 @@ form p {
     text-align: center;
     margin-top: 6px;
 }
+
+/* ---------- Tabela (users.php) ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+ 
+th {
+    background-color: #003366;
+    color: #fff;
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+ 
+td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #dde6f0;
+    color: #333;
+}
+
+td a {
+    background-color: #003366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+ 
+tr:nth-child(even) td {
+    background-color: #f4f8fc;
+}
+ 
+tr:hover td {
+    background-color: #e8f0fa;
+}
+ 
+
 
 /* ---------- Canvas (gráfico) ---------- */
 canvas {

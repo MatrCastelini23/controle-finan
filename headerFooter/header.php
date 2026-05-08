@@ -25,6 +25,7 @@
                 <li><a href="compras.php">Cadastrar Compras</a></li>
                 <li><a href="dividendos.php">Cadastrar Dividendos</a></li>
                 <li><a href="relatorio.php">Relatório</a></li>
+                <li><a href="users.php">Usuários</a></li>
                 <li><a href="classes/Logout.php">Logout</a></li>
             </ul>
         </nav>

@@ -27,11 +27,64 @@
                 session_regenerate_id(true); // Previne session fixation
                 //se for verdadeiro sera gerado essas variaveis de sessao
                 $_SESSION['logado'] = true;
-                $_SESSION['nome'] = 'Usuario';
+                $_SESSION['nome'] = $user['nome'];
                 header('Location: index.php');
             } else {
                 //se for verdadeiro da essa mensagem
                 echo "Credenciais erradas";
+            }
+        }
+
+        public function listarUsuarios(){
+            $sql = "SELECT id, nome, email FROM usuarios";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function listarUsuario(){
+            $sql = "SELECT id, nome, email FROM usuarios WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id', $_GET['id']);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public function editarUsuario($id, $name, $email, $senha) {
+            $sql = "SELECT * FROM usuarios WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id', $id); // usa $id no lugar de $_GET['id']
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($user && password_verify($senha, $user['senha'])){
+                $updateSql = "UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id";
+                $stmt = $this->db->prepare($updateSql);
+                $stmt->bindParam(':nome', $name);
+                $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':id', $id);
+                $stmt->execute();
+                echo "Usuário editado com sucesso!";
+            } else {
+                echo "Credenciais erradas para edição de usuário.";
+            }
+        }
+
+        public function deletarUsuario($id, $senha){
+            $sql = "SELECT * FROM usuarios WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($user && password_verify($senha, $user['senha'])){
+                $deleteSql = "DELETE FROM usuarios WHERE id = :id";
+                $stmt = $this->db->prepare($deleteSql);
+                $stmt->bindParam(':id', $id);
+                $stmt->execute();
+                echo "Usuário deletado com sucesso!";
+            } else {
+                echo "Credenciais erradas para deleção de usuário.";
             }
         }
     }
