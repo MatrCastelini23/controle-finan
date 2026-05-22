@@ -1,0 +1,29 @@
+services:
+  # Configuração do container web (Apache)
+  web: 
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: server-apache
+    ports:
+      - "5000:80"
+    volumes:
+      - .:/var/www/html  
+    depends_on:
+      - db
+
+  # Configuração do container MySQL
+  db:
+    image: mysql:8.0
+    container_name: banco-controle-finan
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: controle_finan
+    ports:
+      - "3306:3306"
+    volumes:
+     - dados_do_banco:/var/lib/mysql
+
+volumes:
+  dados_do_banco: # volume para o Docker gerenciar  
