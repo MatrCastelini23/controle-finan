@@ -1,11 +1,11 @@
 <?php
 
 class Database {
-    private $host = 'localhost';
+    private $host = 'db'; // nome do serviço dentro do docker-compose
     private $port = '3306'; // Porta do banco de dados
     private $db = 'bolsa_de_valores';
     private $user = 'root';
-    private $pass = '';
+    private $pass = 'root';
     private $pdo;
 
     public function connect() {
