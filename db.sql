@@ -1,6 +1,4 @@
-CREATE DATABASE bolsa_de_valores;
-
-USE bolsa_de_valores;
+USE controle_finan;
 
 CREATE TABLE compras (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,3 +22,13 @@ CREATE TABLE usuarios (
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL
 );
+
+/* FAKEDATA */
+
+
+
+INSERT INTO compras (ativo, quantidade, valor_unitario, data_compra) VALUES ('PETR4', 100, 25.50, '2024-01-15');
+INSERT INTO compras (ativo, quantidade, valor_unitario, data_compra) VALUES ('VALE3', 50, 30.00, '2024-02-20'); 
+
+INSERT INTO dividendos (ativo, valor, data_recebimento) VALUES ('PETR4', 150.00, '2024-03-10');
+INSERT INTO dividendos (ativo, valor, data_recebimento) VALUES ('VALE3', 75.00, '2024-04-05');  
