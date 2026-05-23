@@ -19,6 +19,8 @@
                 'email' => $email,
                 'senha' => $hasedPassword
             ]);
+
+            echo 'Usuário cadastrado com sucesso!';
         }
 
         public function checarEmail($email){

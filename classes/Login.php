@@ -83,6 +83,7 @@
                 $stmt->bindParam(':id', $id);
                 $stmt->execute();
                 echo "Usuário deletado com sucesso!";
+                session_destroy();
             } else {
                 echo "Credenciais erradas para deleção de usuário.";
             }

@@ -10,8 +10,8 @@
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $login = new Login();
             $login->deletarUsuario($id, $_POST['senha']);
-            session_destroy();
-            header('Location: login.php');
+            // session_destroy();
+            // header('Location: login.php');
         }
     }
 

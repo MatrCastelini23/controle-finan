@@ -14,8 +14,7 @@
         } else {
             //variavel chama metodo e envia via post os dados do forms
             $newUser->novoUsuario($_POST['name'], $_POST['email'], $_POST['password']);
-            echo 'Novo usuario cadastrado';
-            header('Location: login.php');
+//            header('Location: login.php');
             exit();
         }
     }
