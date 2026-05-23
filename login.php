@@ -1,9 +1,9 @@
 <?php
-    require_once 'classes/Login.php';
+    require_once 'classes/Users.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $login = new Login();
-        $login->logar($_POST['email'], $_POST['password']);
+        $users = new Users();
+        $users->logar($_POST['email'], $_POST['password']);
     }
 ?>
 <!DOCTYPE html>

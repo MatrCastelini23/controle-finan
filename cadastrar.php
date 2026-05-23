@@ -1,10 +1,10 @@
 <?php
-    require_once 'classes/NovoUsuario.php';
+    require_once 'classes/Users.php';
 
     //if que verifica se ha uma requisição post sendo enviada ao servidor
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //variavel compra para chamar a classe NovoUsuario.php
-        $newUser = new NovoUsuario();
+        $newUser = new Users();
         
         //armazena o resultado da checagem em uma variavel clara
         $checarEmail = $newUser->checarEmail($_POST['email']);

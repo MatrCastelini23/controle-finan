@@ -1,12 +1,12 @@
 <?php
     include 'headerFooter/header.php';  
-    require_once 'classes/Login.php';
+    require_once 'classes/Users.php';
 
-    $login = new Login();
-    $user = $login->listarUsuario();
+    $users = new Users();
+    $user = $users->listarUsuario();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $login->editarUsuario($_POST['id'], $_POST['name'],$_POST['email'], $_POST['senha']);
+        $users->editarUsuario($_POST['id'], $_POST['name'],$_POST['email'], $_POST['senha']);
     }
 ?>
 

@@ -1,8 +1,8 @@
 <?php
     include 'headerFooter/header.php';  
-    require_once 'classes/Login.php';
+    require_once 'classes/Users.php';
 
-    $users = new Login();
+    $users = new Users();
     $usuarios = $users->listarUsuarios();
 ?>
 

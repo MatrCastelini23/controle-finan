@@ -1,6 +1,6 @@
 <?php
     include 'headerFooter/header.php';  
-    require_once 'classes/Login.php';
+    require_once 'classes/Users.php';
    // Verifica se o ID do usuário foi fornecido pela URL 
     if (!isset($_GET['id'])) {
         echo "ID do usuário não fornecido.";
@@ -8,8 +8,8 @@
         // Se o ID for fornecido, processa a solicitação de deleção
         $id = $_GET['id'];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $login = new Login();
-            $login->deletarUsuario($id, $_POST['senha']);
+            $users = new Users();
+            $users->deletarUsuario($id, $_POST['senha']);
             // session_destroy();
             // header('Location: login.php');
         }
