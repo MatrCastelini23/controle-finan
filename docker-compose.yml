@@ -24,6 +24,18 @@ services:
       - "3306:3306"
     volumes:
      - dados_do_banco:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-controle-finan
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    depends_on:
+      - db
 
 volumes:
   dados_do_banco: # volume para o Docker gerenciar  

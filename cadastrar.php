@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'classes/Users.php';
 
     //if que verifica se ha uma requisição post sendo enviada ao servidor
@@ -14,9 +15,9 @@
         } else {
             //variavel chama metodo e envia via post os dados do forms
             $newUser->novoUsuario($_POST['name'], $_POST['email'], $_POST['password']);
-//            header('Location: login.php');
-            exit();
         }
+        //echo 'Usuário cadastrado com sucesso!';
+        header('Location: login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <header>
@@ -52,6 +53,8 @@
             </form>
         </div>
     </main>
-<?php
-    include 'headerFooter/footer.php';
-?>
+<footer>
+        <p>&copy; <?php echo date('Y'); ?> Gestão de Ativos. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

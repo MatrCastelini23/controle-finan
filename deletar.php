@@ -1,5 +1,5 @@
-<?php
-    include 'headerFooter/header.php';  
+<?php  
+    include 'headerFooter/header.php';
     require_once 'classes/Users.php';
    // Verifica se o ID do usuário foi fornecido pela URL 
     if (!isset($_GET['id'])) {
@@ -10,11 +10,11 @@
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $users = new Users();
             $users->deletarUsuario($id, $_POST['senha']);
-            // session_destroy();
-            // header('Location: login.php');
+            //session_destroy();
+            //header('Location: login.php');
         }
     }
-
+    session_destroy();
 ?>
 
 <main>

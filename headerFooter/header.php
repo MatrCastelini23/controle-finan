@@ -3,7 +3,7 @@
 
     if(!isset($_SESSION['logado']) || !$_SESSION['logado']){
         header('Location: login.php');
-        exit;
+        exit();
     }
 
 ?>

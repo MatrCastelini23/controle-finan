@@ -46,7 +46,6 @@
                 'senha' => $hasedPassword
             ]);
 
-            echo 'Usuário cadastrado com sucesso!';
         }
 
         public function checarEmail($email){
@@ -107,8 +106,6 @@
                 $stmt = $this->db->prepare($deleteSql);
                 $stmt->bindParam(':id', $id);
                 $stmt->execute();
-                echo "Usuário deletado com sucesso!";
-                session_destroy();
             } else {
                 echo "Credenciais erradas para deleção de usuário.";
             }
